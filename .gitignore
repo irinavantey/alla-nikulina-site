@@ -1,0 +1,25 @@
+# Track only the publishable static site and git metadata by default.
+/*
+!/.gitignore
+!/site/
+!/site/**
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Source materials and heavy working files
+*.docx
+*.xlsx
+*.pdf
+!site/assets/docs/*.pdf
+
+# Large local video assets. Keep originals outside Git or use Git LFS.
+*.mp4
+
+# Temporary files
+*.tmp
+*.bak
+~$*
