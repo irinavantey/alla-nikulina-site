@@ -298,10 +298,13 @@ h1 + .lead, h1 + p, h2 + .lead, h2 + p, h3 + p, h3 + .muted { margin-top: 18px; 
 }
 .phone-video {
   align-items: center;
-  background: radial-gradient(circle at 50% 10%, rgba(244, 175, 22, .14), transparent 36%), #103d3e;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
   display: flex;
   justify-content: center;
   min-height: 520px;
+  overflow: visible;
   padding: 30px;
 }
 .phone-video::before {
@@ -313,7 +316,7 @@ h1 + .lead, h1 + p, h2 + .lead, h2 + p, h3 + p, h3 + .muted { margin-top: 18px; 
   max-height: 620px;
   max-width: 310px;
   position: absolute;
-  width: min(46%, 310px);
+  width: min(100%, 310px);
 }
 .phone-video::after {
   background: #071d1e;
@@ -335,8 +338,25 @@ h1 + .lead, h1 + p, h2 + .lead, h2 + p, h3 + p, h3 + .muted { margin-top: 18px; 
   max-height: 580px;
   max-width: 280px;
   position: relative;
-  width: min(42%, 280px);
+  width: min(100%, 280px);
   z-index: 1;
+}
+.video-grid .grid-2 .phone-video {
+  min-height: 390px;
+  padding: 18px;
+}
+.video-grid .grid-2 .phone-video::before {
+  max-height: 360px;
+  max-width: 200px;
+}
+.video-grid .grid-2 .phone-video::after {
+  top: 34px;
+  width: 64px;
+}
+.video-grid .grid-2 .phone-video video {
+  height: 330px;
+  max-height: 330px;
+  max-width: 178px;
 }
 .resource-card {
   display: flex;
@@ -550,11 +570,11 @@ h1 + .lead, h1 + p, h2 + .lead, h2 + p, h3 + p, h3 + .muted { margin-top: 18px; 
     padding: 24px;
   }
   .phone-video::before {
-    width: min(72%, 280px);
+    width: min(100%, 280px);
   }
   .phone-video video {
     height: min(74vh, 530px);
-    width: min(66%, 250px);
+    width: min(100%, 250px);
   }
   .hero-copy { padding-top: 28px; }
   .hero-media, .hero-media img { min-height: 390px; }
