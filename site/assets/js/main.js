@@ -6,6 +6,17 @@ const CONTACTS = {
   vkBusiness: "https://vk.com/neurocoach_nikulina"
 };
 
+const typographyScope = "h1, h2, h3, p, li, summary, .btn, .tag, .brand span";
+const shortWordsPattern = /(^|[\s(])([А-Яа-яЁёA-Za-z]{1,2})\s+(?=[А-Яа-яЁёA-Za-z0-9])/g;
+
+document.querySelectorAll(typographyScope).forEach((element) => {
+  element.childNodes.forEach((node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      node.nodeValue = node.nodeValue.replace(shortWordsPattern, "$1$2\u00a0");
+    }
+  });
+});
+
 const headerContacts = document.createElement("div");
 headerContacts.className = "header-contacts";
 headerContacts.innerHTML = `

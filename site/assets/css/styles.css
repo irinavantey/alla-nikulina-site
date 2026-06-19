@@ -27,6 +27,16 @@ body {
   line-height: 1.55;
 }
 body.nav-open { overflow: hidden; }
+body.nav-open::before {
+  background: rgba(8, 40, 41, .36);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 55;
+}
 img, video { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 p { margin: 0 0 1rem; }
@@ -51,7 +61,7 @@ h1, h2, h3 {
 h1 { font-size: clamp(2.2rem, 6.1vw, 5.85rem); max-width: 1020px; }
 h2 { font-size: clamp(1.75rem, 3.6vw, 3.75rem); max-width: 960px; }
 h3 { font-size: clamp(1.15rem, 1.7vw, 1.58rem); }
-h1 + .lead, h2 + .lead, h3 + p, h3 + .muted { margin-top: 18px; }
+h1 + .lead, h1 + p, h2 + .lead, h2 + p, h3 + p, h3 + .muted { margin-top: 18px; }
 .card h3 + p, .card h3 + .muted { margin-top: 12px; }
 .lead { color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.35rem); max-width: 760px; }
 .text-wide { max-width: 860px; }
@@ -448,19 +458,25 @@ h1 + .lead, h2 + .lead, h3 + p, h3 + .muted { margin-top: 18px; }
     position: relative;
     z-index: 70;
   }
+  .nav-open .nav-toggle {
+    position: fixed;
+    right: 14px;
+    top: 16px;
+  }
   .menu {
     align-content: start;
-    background: var(--bg);
+    background: linear-gradient(180deg, #fffdf8 0%, #f7f5ef 100%);
     border-left: 1px solid var(--line);
+    box-shadow: -20px 0 70px rgba(8, 40, 41, .18);
     bottom: 0;
     display: grid;
     gap: 10px;
     padding: 86px 24px 24px;
     position: fixed;
-    right: -310px;
+    right: -340px;
     top: 0;
     transition: right .28s ease;
-    width: 300px;
+    width: min(330px, calc(100vw - 28px));
     z-index: 60;
   }
   .menu a {
@@ -469,7 +485,7 @@ h1 + .lead, h2 + .lead, h3 + p, h3 + .muted { margin-top: 18px; }
     color: var(--green);
     padding: 12px 14px;
   }
-  .menu a:hover, .menu a.active { background: var(--green); color: #fffdf8; }
+  .menu a:hover, .menu a.active { background: var(--yellow); color: var(--green); }
   .nav-open .menu { right: 0; }
   .hero-grid, .split, .split.reverse, .video-grid, .cta-inner, .footer-grid, .hero-panel {
     grid-template-columns: 1fr;
