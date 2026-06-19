@@ -3,6 +3,8 @@
 !/.gitignore
 !/site/
 !/site/**
+!/docs/
+!/docs/**
 
 # OS and editor files
 .DS_Store
