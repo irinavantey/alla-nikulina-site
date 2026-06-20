@@ -5,6 +5,8 @@
 !/site/**
 !/docs/
 !/docs/**
+!/док/
+!/док/**
 
 # OS and editor files
 .DS_Store
